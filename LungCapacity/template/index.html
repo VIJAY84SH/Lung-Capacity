@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Capacity Prediction</title>
+    <link rel="stylesheet" href="/staticFiles/style.css">
+</head>
+<body>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" id="age" placeholder="Age" name="Age"> <br> <br>
+        <input type="text" id="hgt" placeholder="Height" name="Height">
+        
+        <h3> Smoke </h3>
+        <select name="Smoke" id="smk" required = "required">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <h3> Gender </h3>
+        <select name="Gender" id="gen" required = "required">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+
+        <h3> Caesarean </h3>
+        <select name="Caesarean" id="research" required = "required">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <br><br><button id="sub" type="submit">Prediction</button>
+        <br>
+    </form>
+
+    <br><br>
+    {{Prediction_text}}
+
+</body>
+</html>
